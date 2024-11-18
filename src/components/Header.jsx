@@ -431,7 +431,7 @@ const Header = ({ speechEnabled }) => {
           </li>
           <li>
             <Link
-              to="/about"
+              to="/"
               className="hover:text-orange-500 transition duration-300"
               onClick={() => speakText("About Us Menu")}
             >
@@ -440,7 +440,7 @@ const Header = ({ speechEnabled }) => {
           </li>
           <li>
             <Link
-              to="/programs"
+              to="/"
               className="hover:text-orange-500 transition duration-300"
               onClick={() => speakText("Programs Menu")}
             >
@@ -449,7 +449,7 @@ const Header = ({ speechEnabled }) => {
           </li>
           <li>
             <Link
-              to="/team"
+              to="/"
               className="hover:text-orange-500 transition duration-300"
               onClick={() => speakText("Our Team Menu")}
             >
@@ -458,7 +458,7 @@ const Header = ({ speechEnabled }) => {
           </li>
           <li>
             <Link
-              to="/events"
+              to="/"
               className="hover:text-orange-500 transition duration-300"
               onClick={() => speakText("Events Menu")}
             >
@@ -467,7 +467,7 @@ const Header = ({ speechEnabled }) => {
           </li>
           <li>
             <Link
-              to="/resources"
+              to="/"
               className="hover:text-orange-500 transition duration-300"
               onClick={() => speakText("Resources Menu")}
             >
@@ -476,7 +476,7 @@ const Header = ({ speechEnabled }) => {
           </li>
           <li>
             <Link
-              to="/contacts"
+              to="/"
               className="hover:text-orange-500 transition duration-300"
               onClick={() => speakText("Contact Us Menu")}
             >
