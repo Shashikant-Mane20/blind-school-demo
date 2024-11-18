@@ -17,54 +17,53 @@
 //       price: "$50",
 //     },
 //     {
-//         image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
-//         days: "Mon - Thu",
-//         time: "3 PM - 6 PM",
-//         lecture: "Web Development",
-//         teacher: "Michael Lee",
-//         price: "$60",
-//       },
-//       {
-//         image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
-//         days: "Fri - Sun",
-//         time: "9 AM - 1 PM",
-//         lecture: "Data Structures",
-//         teacher: "Sarah Johnson",
-//         price: "$80",
-//       },
-//       {
-//         image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
-//         days: "Mon - Fri",
-//         time: "6 PM - 9 PM",
-//         lecture: "Machine Learning",
-//         teacher: "Emily Davis",
-//         price: "$100",
-//       },
-//       {
-//         image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
-//         days: "Tue - Thu",
-//         time: "4 PM - 7 PM",
-//         lecture: "React Development",
-//         teacher: "Alice Williams",
-//         price: "$90",
-//       },
-//       {
-//         image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
-//         days: "Mon - Fri",
-//         time: "10 AM - 1 PM",
-//         lecture: "AI & ML",
-//         teacher: "David Clark",
-//         price: "$120",
-//       },
-//       {
-//         image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
-//         days: "Wed - Fri",
-//         time: "2 PM - 5 PM",
-//         lecture: "Blockchain",
-//         teacher: "George Moore",
-//         price: "$150",
-//       },
-//     // Additional items...
+//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
+//       days: "Mon - Thu",
+//       time: "3 PM - 6 PM",
+//       lecture: "Web Development",
+//       teacher: "Michael Lee",
+//       price: "$60",
+//     },
+//     {
+//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
+//       days: "Fri - Sun",
+//       time: "9 AM - 1 PM",
+//       lecture: "Data Structures",
+//       teacher: "Sarah Johnson",
+//       price: "$80",
+//     },
+//     {
+//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
+//       days: "Mon - Fri",
+//       time: "6 PM - 9 PM",
+//       lecture: "Machine Learning",
+//       teacher: "Emily Davis",
+//       price: "$100",
+//     },
+//     {
+//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
+//       days: "Tue - Thu",
+//       time: "4 PM - 7 PM",
+//       lecture: "React Development",
+//       teacher: "Alice Williams",
+//       price: "$90",
+//     },
+//     {
+//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
+//       days: "Mon - Fri",
+//       time: "10 AM - 1 PM",
+//       lecture: "AI & ML",
+//       teacher: "David Clark",
+//       price: "$120",
+//     },
+//     {
+//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
+//       days: "Wed - Fri",
+//       time: "2 PM - 5 PM",
+//       lecture: "Blockchain",
+//       teacher: "George Moore",
+//       price: "$150",
+//     },
 //   ];
 
 //   // Speech synthesis initialization
@@ -124,7 +123,7 @@
 //           {sliderData.map((item, index) => (
 //             <SwiperSlide key={index}>
 //               <div
-//                 className="p-6 border rounded-lg bg-white shadow-xl"
+//                 className="p-4 sm:p-6 border rounded-lg bg-white shadow-xl"
 //                 onClick={() =>
 //                   speakText(
 //                     `Lecture: ${item.lecture}, Teacher: ${item.teacher}, Days: ${item.days}, Time: ${item.time}, Price: ${item.price}`
@@ -134,7 +133,7 @@
 //                 <img
 //                   src={item.image}
 //                   alt={item.lecture}
-//                   className="w-full h-48 object-cover rounded-lg mb-4"
+//                   className="w-full h-36 sm:h-48 object-cover rounded-lg mb-4"
 //                 />
 //                 <div className="flex items-center justify-between text-orange-500">
 //                   <div className="flex items-center gap-2">
@@ -344,7 +343,7 @@ const OurClasses = () => {
         </Swiper>
 
         {/* Custom Navigation Arrows */}
-        <div className="absolute top-1/2 left-[-50px] sm:left-[-57px] transform -translate-y-1/2 z-10">
+        <div className="absolute top-1/2 left-[-50px] sm:left-[-57px] transform -translate-y-1/2 z-10 hidden sm:block">
           <button
             className="custom-prev p-3 sm:p-3 bg-orange-500 text-black rounded-full hover:bg-orange-600"
             aria-label="Previous Slide"
@@ -353,7 +352,7 @@ const OurClasses = () => {
             <FaArrowLeft size={24} />
           </button>
         </div>
-        <div className="absolute top-1/2 right-[-50px] sm:right-[-57px] transform -translate-y-1/2 z-10">
+        <div className="absolute top-1/2 right-[-50px] sm:right-[-57px] transform -translate-y-1/2 z-10 hidden sm:block">
           <button
             className="custom-next p-3 sm:p-3 bg-orange-500 text-black rounded-full hover:bg-orange-600"
             aria-label="Next Slide"
