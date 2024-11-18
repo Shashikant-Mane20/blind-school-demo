@@ -422,7 +422,7 @@ const Header = ({ speechEnabled }) => {
         <ul className="hidden md:flex space-x-6 font-medium text-gray-700">
           <li>
             <Link
-              to="/home"
+              to="/"
               className="hover:text-orange-500 transition duration-300"
               onClick={() => speakText("Home Menu")}
             >
