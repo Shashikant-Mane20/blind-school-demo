@@ -1,12 +1,11 @@
-// import React, { useState } from "react";
+// import React from "react";
 // import { FaArrowLeft, FaArrowRight, FaCalendarAlt, FaClock } from "react-icons/fa";
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import "swiper/css"; // Import core Swiper styles
 // import "swiper/css/navigation"; // For navigation buttons
 // import { Navigation } from "swiper/modules"; // Navigation module
 
-// const OurClasses = () => {
-
+// const OurClasses = ({ speechEnabled }) => {
 //   const sliderData = [
 //     {
 //       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D",
@@ -17,7 +16,7 @@
 //       price: "$50",
 //     },
 //     {
-//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
+//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D",
 //       days: "Mon - Thu",
 //       time: "3 PM - 6 PM",
 //       lecture: "Web Development",
@@ -25,7 +24,7 @@
 //       price: "$60",
 //     },
 //     {
-//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
+//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D",
 //       days: "Fri - Sun",
 //       time: "9 AM - 1 PM",
 //       lecture: "Data Structures",
@@ -33,7 +32,7 @@
 //       price: "$80",
 //     },
 //     {
-//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
+//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D",
 //       days: "Mon - Fri",
 //       time: "6 PM - 9 PM",
 //       lecture: "Machine Learning",
@@ -41,7 +40,7 @@
 //       price: "$100",
 //     },
 //     {
-//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
+//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D",
 //       days: "Tue - Thu",
 //       time: "4 PM - 7 PM",
 //       lecture: "React Development",
@@ -49,7 +48,7 @@
 //       price: "$90",
 //     },
 //     {
-//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
+//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D",
 //       days: "Mon - Fri",
 //       time: "10 AM - 1 PM",
 //       lecture: "AI & ML",
@@ -57,7 +56,7 @@
 //       price: "$120",
 //     },
 //     {
-//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D", 
+//       image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZ3JhbW1pbmd8ZW58MHx8MHx8fDA%3D",
 //       days: "Wed - Fri",
 //       time: "2 PM - 5 PM",
 //       lecture: "Blockchain",
@@ -69,19 +68,22 @@
 //   // Speech synthesis initialization
 //   const synth = window.speechSynthesis;
 
-//   const speakText = (text) => {
-//     // Stop any ongoing speech
-//     synth.cancel();
+//   const stopSpeaking = () => {
+//     synth.cancel(); // Stop ongoing speech
+//   };
 
-//     // Create a new speech utterance
+//   const speakText = (text) => {
+//     if (!speechEnabled) {
+//       stopSpeaking(); // Stop speech if toggled off
+//       return;
+//     }
+
+//     stopSpeaking(); // Stop any ongoing speech before starting new one
 //     const utterance = new SpeechSynthesisUtterance(text);
 //     utterance.lang = "en-US";
-
-//     // Start speaking the new utterance
 //     synth.speak(utterance);
 //   };
 
-//   // Function to handle arrow clicks and always speak "Left" or "Right"
 //   const handleArrowClick = (direction) => {
 //     speakText(direction === "left" ? "Left" : "Right");
 //   };
@@ -90,14 +92,16 @@
 //     <div className="p-4 sm:p-8 bg-gray-100 min-h-screen">
 //       {/* Section Header */}
 //       <div className="mb-8 text-center">
-//         <b>
 //         <h1
 //           className="text-3xl sm:text-4xl font-bold text-gray-800"
-//           onClick={() => speakText("Our classes section ,Application programming interface voice-over (VO), instructor-led training, and curated user-created content.")}
+//           onClick={() =>
+//             speakText(
+//               "Our classes section, Application programming interface voice-over, instructor-led training, and curated user-created content."
+//             )
+//           }
 //         >
 //           Our <span className="text-[#f37335]">Classes</span>
 //         </h1>
-//         </b>
 //         <p className="text-base sm:text-lg mt-4 text-gray-700">
 //           Application programming interface voice-over (VO), instructor-led training, and curated user-created content.
 //         </p>
@@ -106,14 +110,14 @@
 //       {/* Slider Section */}
 //       <div className="relative max-w-full sm:max-w-5xl mx-auto">
 //         <Swiper
-//           spaceBetween={30} // Space between slides
-//           loop={true} // Infinite loop
-//           slidesPerView={1} // Default to 1 slide visible
+//           spaceBetween={30}
+//           loop={true}
+//           slidesPerView={1}
 //           navigation={{
 //             prevEl: ".custom-prev",
 //             nextEl: ".custom-next",
-//           }} // Custom navigation buttons
-//           modules={[Navigation]} // Enable navigation module
+//           }}
+//           modules={[Navigation]}
 //           breakpoints={{
 //             640: { slidesPerView: 1 },
 //             768: { slidesPerView: 2 },
@@ -318,6 +322,12 @@ const OurClasses = ({ speechEnabled }) => {
                     `Lecture: ${item.lecture}, Teacher: ${item.teacher}, Days: ${item.days}, Time: ${item.time}, Price: ${item.price}`
                   )
                 }
+                tabIndex={0} // Making it focusable
+                onFocus={() =>
+                  speakText(
+                    `Lecture: ${item.lecture}, Teacher: ${item.teacher}, Days: ${item.days}, Time: ${item.time}, Price: ${item.price}`
+                  )
+                }
               >
                 <img
                   src={item.image}
@@ -352,6 +362,8 @@ const OurClasses = ({ speechEnabled }) => {
             className="custom-prev p-3 sm:p-3 bg-orange-500 text-black rounded-full hover:bg-orange-600"
             aria-label="Previous Slide"
             onClick={() => handleArrowClick("left")}
+            tabIndex={0} // Make the previous arrow focusable
+            onFocus={() => speakText("Left")}
           >
             <FaArrowLeft size={24} />
           </button>
@@ -361,6 +373,8 @@ const OurClasses = ({ speechEnabled }) => {
             className="custom-next p-3 sm:p-3 bg-orange-500 text-black rounded-full hover:bg-orange-600"
             aria-label="Next Slide"
             onClick={() => handleArrowClick("right")}
+            tabIndex={0} // Make the next arrow focusable
+            onFocus={() => speakText("Right")}
           >
             <FaArrowRight size={24} />
           </button>
@@ -371,3 +385,5 @@ const OurClasses = ({ speechEnabled }) => {
 };
 
 export default OurClasses;
+
+

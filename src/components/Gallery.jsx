@@ -4,7 +4,7 @@
 // import 'swiper/css';
 // import 'swiper/css/navigation';
 
-// const StudyProcessGallery = () => {
+// const StudyProcessGallery = ({ speechEnabled }) => {
 //   const galleryImages = [
 //     {
 //       id: 1,
@@ -18,22 +18,22 @@
 //     },
 //     {
 //       id: 3,
-//       url: 'https://images.unsplash.com/photo-1677594334053-afe4b41aa0a3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//       url: 'https://images.unsplash.com/photo-1677594334053-afe4b41aa0a3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fA%3D%3D',
 //       alt: 'Study Image 3',
 //     },
 //     {
 //       id: 4,
-//       url: 'https://plus.unsplash.com/premium_photo-1691962725045-57ff9e77f0bd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//       url: 'https://plus.unsplash.com/premium_photo-1691962725045-57ff9e77f0bd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fA%3D%3D',
 //       alt: 'Study Image 4',
 //     },
 //     {
 //       id: 5,
-//       url: 'https://plus.unsplash.com/premium_photo-1691962725044-d80a7145f7ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//       url: 'https://plus.unsplash.com/premium_photo-1691962725044-d80a7145f7ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fA%3D%3D',
 //       alt: 'Study Image 5',
 //     },
 //     {
 //       id: 6,
-//       url: 'https://images.unsplash.com/photo-1531674842274-9563aa15686f?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+//       url: 'https://images.unsplash.com/photo-1531674842274-9563aa15686f?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fA%3D%3D',
 //       alt: 'Study Image 6',
 //     },
 //   ];
@@ -45,9 +45,11 @@
 //   const synth = window.speechSynthesis;
 
 //   const speakText = (text) => {
-//     const utterance = new SpeechSynthesisUtterance(text);
-//     utterance.lang = 'en-US';
-//     synth.speak(utterance); // Add utterance to the queue
+//     if (speechEnabled) {
+//       const utterance = new SpeechSynthesisUtterance(text);
+//       utterance.lang = 'en-US';
+//       synth.speak(utterance); // Add utterance to the queue
+//     }
 //   };
 
 //   // Open modal with selected image and speak its description
@@ -169,32 +171,39 @@ const StudyProcessGallery = ({ speechEnabled }) => {
     {
       id: 1,
       url: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      alt: 'Study Image 1',
+    //   alt: 'Study Image 1',
+    alt:'Image 1: Student studying in the library.'
     },
     {
       id: 2,
       url: 'https://plus.unsplash.com/premium_photo-1677567996070-68fa4181775a?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      alt: 'Study Image 2',
+    //   alt: 'Study Image 2',
+    alt:'Image 2: Library with shelves of books.'
     },
     {
       id: 3,
       url: 'https://images.unsplash.com/photo-1677594334053-afe4b41aa0a3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fA%3D%3D',
-      alt: 'Study Image 3',
+    //   alt: 'Study Image 3',
+    alt:'Image 3: Two students standing in front of a building.'
     },
     {
       id: 4,
-      url: 'https://plus.unsplash.com/premium_photo-1691962725045-57ff9e77f0bd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fA%3D%3D',
-      alt: 'Study Image 4',
+      url: 'https://plus.unsplash.com/premium_photo-1691962725045-57ff9e77f0bd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    //   alt: 'Study Image 4',
+      alt:'Image 4: Students discussing while sitting on stairs.'
     },
     {
       id: 5,
-      url: 'https://plus.unsplash.com/premium_photo-1691962725044-d80a7145f7ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fA%3D%3D',
-      alt: 'Study Image 5',
+      url: 'https://plus.unsplash.com/premium_photo-1691962725044-d80a7145f7ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    //   alt: 'Study Image 5',
+    alt:'Image 5: Students laughing and having a discussion.'
+
     },
     {
       id: 6,
       url: 'https://images.unsplash.com/photo-1531674842274-9563aa15686f?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHx8fA%3D%3D',
-      alt: 'Study Image 6',
+    //   alt: 'Study Image 6',
+    alt:'Image 6: Student sitting and standing in the corridor.'
     },
   ];
 
@@ -225,6 +234,11 @@ const StudyProcessGallery = ({ speechEnabled }) => {
     synth.cancel(); // Stop all speech when modal closes
   };
 
+  // Handle focus event for tabbing through gallery images
+  const handleFocus = (text) => {
+    speakText(text); // Speak the focused element's text
+  };
+
   return (
     <section className="py-10 bg-gray-100 px-4 md:px-16">
       {/* Header */}
@@ -232,6 +246,8 @@ const StudyProcessGallery = ({ speechEnabled }) => {
         <h2
           className="text-4xl font-extrabold text-gray-800 cursor-pointer"
           onClick={() => speakText('Study Process Gallery')}
+          tabIndex={0} // Makes the header focusable
+          onFocus={() => handleFocus('Study Process Gallery')}
         >
           Study Process <span className="text-[rgb(243,115,53)]">Gallery</span>
         </h2>
@@ -239,6 +255,12 @@ const StudyProcessGallery = ({ speechEnabled }) => {
           className="text-lg text-gray-700 mt-4 cursor-pointer"
           onClick={() =>
             speakText(
+              'Instructor-led training, digital learning, CBT completion criteria, learning management system, cognitive load, BYOD, self-directed learning, knowledge in process.'
+            )
+          }
+          tabIndex={0} // Makes the paragraph focusable
+          onFocus={() =>
+            handleFocus(
               'Instructor-led training, digital learning, CBT completion criteria, learning management system, cognitive load, BYOD, self-directed learning, knowledge in process.'
             )
           }
@@ -262,6 +284,8 @@ const StudyProcessGallery = ({ speechEnabled }) => {
                 : 'rounded-2xl'
             }`}
             onClick={() => openModal(index)}
+            tabIndex={0} // Makes the gallery image focusable
+            onFocus={() => handleFocus(image.alt)} // Speak the image description on focus
           >
             <img
               src={image.url}
@@ -307,6 +331,8 @@ const StudyProcessGallery = ({ speechEnabled }) => {
                     src={image.url}
                     alt={image.alt}
                     className="w-full h-96 object-cover rounded-lg"
+                    tabIndex={0} // Makes the modal images focusable
+                    onFocus={() => handleFocus(image.alt)} // Speak description when image is focused
                   />
                 </SwiperSlide>
               ))}
@@ -319,4 +345,3 @@ const StudyProcessGallery = ({ speechEnabled }) => {
 };
 
 export default StudyProcessGallery;
-

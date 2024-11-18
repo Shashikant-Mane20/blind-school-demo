@@ -1,25 +1,51 @@
-// import React from 'react';
-// import { FaChalkboardTeacher, FaCertificate } from 'react-icons/fa'; // Importing the icons
+// import React from "react";
+// import { FaChalkboardTeacher, FaCertificate } from "react-icons/fa"; // Importing the icons
 
-// const OurOfferings = () => {
+// const OurOfferings = ({ speechEnabled }) => {
+//   // Initialize speech synthesis
+//   const synth = window.speechSynthesis;
+
+//   // Stop any ongoing speech
+//   const stopSpeaking = () => {
+//     synth.cancel();
+//   };
+
 //   // Speech synthesis function
 //   const speakText = (text) => {
+//     if (!speechEnabled) {
+//       stopSpeaking(); // Stop speech if toggled off
+//       return;
+//     }
+
+//     stopSpeaking(); // Stop any ongoing speech before starting new one
 //     const utterance = new SpeechSynthesisUtterance(text);
-//     window.speechSynthesis.speak(utterance);
+//     utterance.lang = "en-US";
+//     synth.speak(utterance);
 //   };
 
 //   return (
 //     <section className="py-20 bg-gray-50">
 //       {/* Section Header */}
 //       <div className="text-center mb-12">
-//         <h2 
+//         <h2
 //           className="text-3xl sm:text-4xl font-extrabold text-gray-800"
-//           onClick={() => speakText("Welcome to Blind School's Educational Program")}> {/* Added onClick event */}
-//           Welcome to Blind School's <span className="text-[rgb(243,115,53)]">Educational Program</span>
+//           onClick={() =>
+//             speakText(
+//               "Welcome to Blind School's Educational Program"
+//             )
+//           }
+//         >
+//           Welcome to Blind School's{" "}
+//           <span className="text-[rgb(243,115,53)]">Educational Program</span>
 //         </h2>
-//         <p 
+//         <p
 //           className="text-lg sm:text-xl text-gray-700 mt-4"
-//           onClick={() => speakText("We provide specialized education, accessibility, and support to empower students with visual impairments.")}> {/* Added onClick event */}
+//           onClick={() =>
+//             speakText(
+//               "We provide specialized education, accessibility, and support to empower students with visual impairments."
+//             )
+//           }
+//         >
 //           We provide specialized education, accessibility, and support to empower students with visual impairments.
 //         </p>
 //       </div>
@@ -27,9 +53,14 @@
 //       {/* Cards Section */}
 //       <div className="flex justify-center gap-10 flex-wrap">
 //         {/* Left Card: Specialized Educators */}
-//         <div 
+//         <div
 //           className="w-full sm:w-72 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 text-center"
-//           onClick={() => speakText("Specialized Educators: Our teachers are trained to provide a supportive and accessible learning environment for visually impaired students.")}> {/* Added onClick event */}
+//           onClick={() =>
+//             speakText(
+//               "Specialized Educators: Our teachers are trained to provide a supportive and accessible learning environment for visually impaired students."
+//             )
+//           }
+//         >
 //           <div className="flex items-center justify-center mb-6">
 //             <FaChalkboardTeacher className="text-5xl text-[rgb(243,115,53)]" />
 //           </div>
@@ -42,14 +73,19 @@
 //         </div>
 
 //         {/* Middle Card: Inclusive Learning Programs */}
-//         <div 
+//         <div
 //           className="w-full sm:w-72 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 relative text-center min-h-[350px] flex flex-col items-center justify-center"
-//           onClick={() => speakText("Inclusive Learning Programs: Our programs are designed to provide equal learning opportunities using adaptive tools and resources.")}> {/* Added onClick event */}
+//           onClick={() =>
+//             speakText(
+//               "Inclusive Learning Programs: Our programs are designed to provide equal learning opportunities using adaptive tools and resources."
+//             )
+//           }
+//         >
 //           {/* Image inside the card */}
 //           <div className="w-32 h-32 mb-6">
-//             <img 
-//               src="https://shelly.merku.love/wp-content/uploads/2021/08/kids-at-lesson-SEUX7GM-150x150.jpg" 
-//               alt="Inclusive Learning Programs" 
+//             <img
+//               src="https://shelly.merku.love/wp-content/uploads/2021/08/kids-at-lesson-SEUX7GM-150x150.jpg"
+//               alt="Inclusive Learning Programs"
 //               className="w-full h-full rounded-full border-4 border-[rgb(243,115,53)]"
 //             />
 //           </div>
@@ -62,16 +98,26 @@
 //           <div className="text-center mt-6">
 //             <button
 //               className="bg-white text-[rgb(243,115,53)] py-2 px-4 rounded-lg border-2 border-[rgb(243,115,53)] hover:bg-gradient-to-r hover:from-[rgb(243,115,53)] hover:to-[#f37335] hover:text-white transition duration-300"
-//               onClick={() => speakText("Learn more about our inclusive learning programs.")}> {/* Added onClick event */}
+//               onClick={() =>
+//                 speakText(
+//                   "Learn more about our inclusive learning programs."
+//                 )
+//               }
+//             >
 //               Learn More
 //             </button>
 //           </div>
 //         </div>
 
 //         {/* Right Card: Certification and Support */}
-//         <div 
+//         <div
 //           className="w-full sm:w-72 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 text-center"
-//           onClick={() => speakText("Certification and Support: We offer globally recognized certifications and continued support for our students.")}> {/* Added onClick event */}
+//           onClick={() =>
+//             speakText(
+//               "Certification and Support: We offer globally recognized certifications and continued support for our students."
+//             )
+//           }
+//         >
 //           <div className="flex items-center justify-center mb-6">
 //             <FaCertificate className="text-5xl text-[rgb(243,115,53)]" />
 //           </div>
@@ -120,10 +166,12 @@ const OurOfferings = ({ speechEnabled }) => {
       <div className="text-center mb-12">
         <h2
           className="text-3xl sm:text-4xl font-extrabold text-gray-800"
+          tabIndex={0}
+          onFocus={() =>
+            speakText("Welcome to Blind School's Educational Program")
+          }
           onClick={() =>
-            speakText(
-              "Welcome to Blind School's Educational Program"
-            )
+            speakText("Welcome to Blind School's Educational Program")
           }
         >
           Welcome to Blind School's{" "}
@@ -131,6 +179,12 @@ const OurOfferings = ({ speechEnabled }) => {
         </h2>
         <p
           className="text-lg sm:text-xl text-gray-700 mt-4"
+          tabIndex={0}
+          onFocus={() =>
+            speakText(
+              "We provide specialized education, accessibility, and support to empower students with visual impairments."
+            )
+          }
           onClick={() =>
             speakText(
               "We provide specialized education, accessibility, and support to empower students with visual impairments."
@@ -146,6 +200,12 @@ const OurOfferings = ({ speechEnabled }) => {
         {/* Left Card: Specialized Educators */}
         <div
           className="w-full sm:w-72 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 text-center"
+          tabIndex={0}
+          onFocus={() =>
+            speakText(
+              "Specialized Educators: Our teachers are trained to provide a supportive and accessible learning environment for visually impaired students."
+            )
+          }
           onClick={() =>
             speakText(
               "Specialized Educators: Our teachers are trained to provide a supportive and accessible learning environment for visually impaired students."
@@ -166,6 +226,12 @@ const OurOfferings = ({ speechEnabled }) => {
         {/* Middle Card: Inclusive Learning Programs */}
         <div
           className="w-full sm:w-72 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-105 relative text-center min-h-[350px] flex flex-col items-center justify-center"
+          tabIndex={0}
+          onFocus={() =>
+            speakText(
+              "Inclusive Learning Programs: Our programs are designed to provide equal learning opportunities using adaptive tools and resources."
+            )
+          }
           onClick={() =>
             speakText(
               "Inclusive Learning Programs: Our programs are designed to provide equal learning opportunities using adaptive tools and resources."
@@ -189,9 +255,15 @@ const OurOfferings = ({ speechEnabled }) => {
           <div className="text-center mt-6">
             <button
               className="bg-white text-[rgb(243,115,53)] py-2 px-4 rounded-lg border-2 border-[rgb(243,115,53)] hover:bg-gradient-to-r hover:from-[rgb(243,115,53)] hover:to-[#f37335] hover:text-white transition duration-300"
+              tabIndex={0}
+              onFocus={() =>
+                speakText(
+                  "Learn more."
+                )
+              }
               onClick={() =>
                 speakText(
-                  "Learn more about our inclusive learning programs."
+                  "Learn more."
                 )
               }
             >
@@ -203,6 +275,12 @@ const OurOfferings = ({ speechEnabled }) => {
         {/* Right Card: Certification and Support */}
         <div
           className="w-full sm:w-72 p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition duration-300 text-center"
+          tabIndex={0}
+          onFocus={() =>
+            speakText(
+              "Certification and Support: We offer globally recognized certifications and continued support for our students."
+            )
+          }
           onClick={() =>
             speakText(
               "Certification and Support: We offer globally recognized certifications and continued support for our students."

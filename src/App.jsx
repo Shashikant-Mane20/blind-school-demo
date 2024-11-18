@@ -1,6 +1,4 @@
-
-
-// import React, { useState } from "react";
+// import React, { useState, useEffect, useRef } from "react";
 // import { BrowserRouter as Router } from "react-router-dom";
 // import HeroSection from "./components/HeroSection";
 // import OurOfferings from "./components/OurOfferings";
@@ -12,28 +10,61 @@
 // import Footer from "./components/Footer";
 
 // function App() {
-//   const [speechEnabled, setSpeechEnabled] = useState(false);
+//   const [speechEnabled, setSpeechEnabled] = useState(() => {
+//     const savedSpeechEnabled = localStorage.getItem("speechEnabled");
+//     return savedSpeechEnabled === "true";
+//   });
+
+//   const [isButtonAccessible, setIsButtonAccessible] = useState(true);
+//   const toggleButtonRef = useRef(null);
+
+//   const speakText = (text) => {
+//     const synth = window.speechSynthesis;
+//     const utterance = new SpeechSynthesisUtterance(text);
+//     utterance.lang = "en-US";
+//     utterance.pitch = 1;
+//     utterance.rate = 1;
+//     utterance.volume = 1;
+//     synth.cancel();
+//     synth.speak(utterance);
+//   };
 
 //   const toggleSpeech = () => {
-//     if (speechEnabled) {
-//       // Stop all ongoing speech synthesis when toggling off
-//       window.speechSynthesis.cancel();
-//     }
-//     setSpeechEnabled((prev) => !prev);
+//     const newStatus = !speechEnabled;
+//     setSpeechEnabled(newStatus);
+//     localStorage.setItem("speechEnabled", newStatus);
+//     speakText(newStatus ? "ScreenReader On" : "ScreenReader Off");
 //   };
+
+//   useEffect(() => {
+//     const handleKeyDown = (event) => {
+//       if (event.key === "Tab") {
+//         // Make button accessible again on Tab key press
+//         setIsButtonAccessible(true);
+//       }
+//       if (event.key === "Escape") {
+//         // Remove button from tab order on Escape key press
+//         setIsButtonAccessible(false);
+//       }
+//     };
+
+//     document.addEventListener("keydown", handleKeyDown);
+//     return () => document.removeEventListener("keydown", handleKeyDown);
+//   }, []);
 
 //   return (
 //     <Router>
 //       <div className="App">
 //         {/* Floating Toggle Button */}
 //         <button
+//           ref={toggleButtonRef}
 //           onClick={toggleSpeech}
 //           style={{
 //             position: "fixed",
 //             bottom: "20px",
 //             right: "20px",
 //             zIndex: 1000,
-//             backgroundColor: speechEnabled ? "#34D399" : "#EF4444", // Green for ON, Red for OFF
+//             backgroundColor: speechEnabled ? "#34D399" : "#EF4444",
 //             color: "white",
 //             border: "none",
 //             borderRadius: "50%",
@@ -43,6 +74,7 @@
 //             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
 //             cursor: "pointer",
 //           }}
+//           tabIndex={isButtonAccessible ? 0 : -1}
 //         >
 //           {speechEnabled ? "ON" : "OFF"}
 //         </button>
@@ -69,7 +101,7 @@
 
 // export default App;
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import HeroSection from "./components/HeroSection";
 import OurOfferings from "./components/OurOfferings";
@@ -81,13 +113,14 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 function App() {
-  // Load speechEnabled state from localStorage, default to false if not set
   const [speechEnabled, setSpeechEnabled] = useState(() => {
     const savedSpeechEnabled = localStorage.getItem("speechEnabled");
-    return savedSpeechEnabled === "true"; // Convert from string to boolean
+    return savedSpeechEnabled === "true";
   });
 
-  // Function to speak text
+  const [isButtonAccessible, setIsButtonAccessible] = useState(true);
+  const toggleButtonRef = useRef(null);
+
   const speakText = (text) => {
     const synth = window.speechSynthesis;
     const utterance = new SpeechSynthesisUtterance(text);
@@ -95,38 +128,52 @@ function App() {
     utterance.pitch = 1;
     utterance.rate = 1;
     utterance.volume = 1;
-    synth.cancel(); // Stop any ongoing speech
+    synth.cancel();
     synth.speak(utterance);
   };
 
   const toggleSpeech = () => {
-    const newStatus = !speechEnabled; // Determine the new state
+    const newStatus = !speechEnabled;
     setSpeechEnabled(newStatus);
-
-    // Store the new status in localStorage
     localStorage.setItem("speechEnabled", newStatus);
-
-    // Speak "Switch On" or "Switch Off"
-    speakText(newStatus ? "Switch On" : "Switch Off");
+    speakText(newStatus ? "ScreenReader is On" : "ScreenReader is Off");
   };
 
   useEffect(() => {
-    // Optionally, if you want to speak the initial state after loading
-    speakText(speechEnabled ? "Switch On" : "Switch Off");
-  }, [speechEnabled]);
+    const handleKeyDown = (event) => {
+      if (event.key === "Tab") {
+        // Make button accessible again on Tab key press
+        setIsButtonAccessible(true);
+      }
+      if (event.key === "Escape") {
+        // Remove button from tab order on Escape key press
+        setIsButtonAccessible(false);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
+
+  // Function to speak the current state when the button is focused
+  const handleButtonFocus = () => {
+    speakText(speechEnabled ? "ScreenReader is On" : "ScreenReader is Off");
+  };
 
   return (
     <Router>
       <div className="App">
         {/* Floating Toggle Button */}
         <button
+          ref={toggleButtonRef}
           onClick={toggleSpeech}
+          onFocus={handleButtonFocus}  // Speak the current state when focused
           style={{
             position: "fixed",
             bottom: "20px",
             right: "20px",
             zIndex: 1000,
-            backgroundColor: speechEnabled ? "#34D399" : "#EF4444", // Green for ON, Red for OFF
+            backgroundColor: speechEnabled ? "#34D399" : "#EF4444",
             color: "white",
             border: "none",
             borderRadius: "50%",
@@ -136,6 +183,7 @@ function App() {
             boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
             cursor: "pointer",
           }}
+          tabIndex={isButtonAccessible ? 0 : -1}
         >
           {speechEnabled ? "ON" : "OFF"}
         </button>
@@ -161,4 +209,3 @@ function App() {
 }
 
 export default App;
-

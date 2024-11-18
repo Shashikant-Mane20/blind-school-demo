@@ -1,9 +1,7 @@
-
-
-// import React, { useState } from "react";
+// import React from "react";
 // import { FaStar } from "react-icons/fa";
 
-// const OurAwesomeReviews = () => {
+// const OurAwesomeReviews = ({ speechEnabled }) => {
 //   const reviews = [
 //     {
 //       name: "John Doe",
@@ -35,22 +33,21 @@
 //     },
 //   ];
 
-//   // Initialize speech synthesis and state
 //   const synth = window.speechSynthesis;
 
-//   // Function to stop any ongoing speech
 //   const stopSpeaking = () => {
 //     if (synth.speaking) {
 //       synth.cancel(); // Stop ongoing speech
 //     }
 //   };
 
-//   // Function to speak text
 //   const speakText = (text) => {
-//     stopSpeaking(); // Stop any ongoing speech before starting new one
+//     if (!speechEnabled) return; // Prevent speaking if speech is disabled
+
+//     stopSpeaking();
 //     const utterance = new SpeechSynthesisUtterance(text);
 //     utterance.lang = "en-US";
-//     synth.speak(utterance); // Speak the new text
+//     synth.speak(utterance);
 //   };
 
 //   return (
@@ -160,6 +157,10 @@ const OurAwesomeReviews = ({ speechEnabled }) => {
     synth.speak(utterance);
   };
 
+  const handleFocus = (text) => {
+    speakText(text); // Speak the text when the element is focused
+  };
+
   return (
     <div className="p-8 bg-gray-100 min-h-screen">
       {/* Section Header */}
@@ -167,6 +168,12 @@ const OurAwesomeReviews = ({ speechEnabled }) => {
         className="text-center mb-8"
         onClick={() =>
           speakText(
+            "Our Awesome Reviews. Our clients love the work we do. Here's what they have to say."
+          )
+        }
+        tabIndex={0} // Make the header focusable
+        onFocus={() =>
+          handleFocus(
             "Our Awesome Reviews. Our clients love the work we do. Here's what they have to say."
           )
         }
@@ -190,6 +197,12 @@ const OurAwesomeReviews = ({ speechEnabled }) => {
                 `Review by ${item.name}, ${item.designation}. "${item.review}" Rated ${item.rating} stars.`
               )
             }
+            tabIndex={0} // Make the entire card focusable
+            onFocus={() =>
+              handleFocus(
+                `Review by ${item.name}, ${item.designation}. "${item.review}" Rated ${item.rating} stars.`
+              )
+            }
           >
             <div className="flex items-center mb-4">
               {/* Render stars based on the rating */}
@@ -203,7 +216,9 @@ const OurAwesomeReviews = ({ speechEnabled }) => {
             </div>
             <p className="text-orange-500 italic mb-4">{`"${item.review}"`}</p>
             <div>
-              <h3 className="text-xl font-semibold text-gray-800">{item.name}</h3>
+              <h3 className="text-xl font-semibold text-gray-800">
+                {item.name}
+              </h3>
               <p className="text-gray-600">{item.designation}</p>
             </div>
           </div>
