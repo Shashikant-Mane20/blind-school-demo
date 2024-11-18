@@ -142,10 +142,10 @@ const Footer = () => {
           <p
             className="cursor-pointer text-gray-400 hover:text-orange-500 transition"
             onClick={() =>
-              speakText("Copyrights 2021 Shelly. All rights reserved.")
+              speakText("Copyrights 2024 Bright Vision. All rights reserved.")
             }
           >
-            © Copyrights 2021 Shelly. All rights reserved.
+            © Copyrights 2024 Bright Vision. All rights reserved.
           </p>
         </div>
       </div>
