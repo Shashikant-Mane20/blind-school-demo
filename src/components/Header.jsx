@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Initialize SpeechSynthesis
   const [synth] = useState(window.speechSynthesis);
 
   const stopSpeaking = () => {
@@ -29,28 +28,28 @@ const Header = () => {
       <div className="flex flex-col md:flex-row justify-between items-center px-4 py-2 bg-orange-500 text-white text-sm">
         <div
           className="font-semibold cursor-pointer text-center md:text-left"
-          onClick={() => speakText("Shelly – Primary School")}
+          onClick={() => speakText("Bright Vision – Empowering the Blind")}
         >
-          <span className="text-lg">Shelly</span> – Primary School
+          <span className="text-lg">Bright Vision</span> – Empowering the Blind
         </div>
         <div className="space-y-2 md:space-y-0 md:space-x-6 mt-2 md:mt-0">
           <span
             className="cursor-pointer block md:inline"
-            onClick={() => speakText("Call Us: +2 342 5446 67")}
+            onClick={() => speakText("Call Us: +1 800 123 456")}
           >
-            Call Us: +2 342 5446 67
+            Call Us: +1 800 123 456
           </span>
           <span
             className="cursor-pointer block md:inline"
-            onClick={() => speakText("Business hours: Monday to Friday, 8 AM to 5 PM")}
+            onClick={() => speakText("Open hours: Monday to Friday, 9 AM to 6 PM")}
           >
-            Business hours: Mon - Fri 8 AM - 5 PM
+            Open hours: Mon - Fri 9 AM - 6 PM
           </span>
           <span
             className="cursor-pointer block md:inline"
-            onClick={() => speakText("Location: Franklin Street, Greenpoint Avenue")}
+            onClick={() => speakText("Address: 123 Vision Lane, Hope City")}
           >
-            Location: Franklin St, Greenpoint Ave
+            Address: 123 Vision Lane, Hope City
           </span>
         </div>
       </div>
@@ -60,9 +59,9 @@ const Header = () => {
         {/* Logo */}
         <div
           className="text-2xl font-bold text-orange-500 cursor-pointer"
-          onClick={() => speakText("Shelly")}
+          onClick={() => speakText("Bright Vision")}
         >
-          Shelly
+          Bright Vision
         </div>
 
         {/* Hamburger Menu */}
@@ -109,26 +108,26 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  to="/classes"
+                  to="/programs"
                   className="hover:text-orange-500 transition duration-300"
                   onClick={() => {
-                    speakText("Classes");
+                    speakText("Programs");
                     setIsMenuOpen(false);
                   }}
                 >
-                  Classes
+                  Programs
                 </Link>
               </li>
               <li>
                 <Link
-                  to="/teachers"
+                  to="/team"
                   className="hover:text-orange-500 transition duration-300"
                   onClick={() => {
-                    speakText("Teachers");
+                    speakText("Our Team");
                     setIsMenuOpen(false);
                   }}
                 >
-                  Teachers
+                  Our Team
                 </Link>
               </li>
               <li>
@@ -145,14 +144,14 @@ const Header = () => {
               </li>
               <li>
                 <Link
-                  to="/blog"
+                  to="/resources"
                   className="hover:text-orange-500 transition duration-300"
                   onClick={() => {
-                    speakText("Blog");
+                    speakText("Resources");
                     setIsMenuOpen(false);
                   }}
                 >
-                  Blog
+                  Resources
                 </Link>
               </li>
               <li>
@@ -160,11 +159,11 @@ const Header = () => {
                   to="/contacts"
                   className="hover:text-orange-500 transition duration-300"
                   onClick={() => {
-                    speakText("Contacts");
+                    speakText("Contact Us");
                     setIsMenuOpen(false);
                   }}
                 >
-                  Contacts
+                  Contact Us
                 </Link>
               </li>
             </ul>
@@ -177,7 +176,7 @@ const Header = () => {
             <Link
               to="/home"
               className="hover:text-orange-500 transition duration-300"
-              onClick={() => speakText("Home")}
+              onClick={() => speakText("Home Menu")}
             >
               Home
             </Link>
@@ -186,54 +185,54 @@ const Header = () => {
             <Link
               to="/about"
               className="hover:text-orange-500 transition duration-300"
-              onClick={() => speakText("About Us")}
+              onClick={() => speakText("About Us Menu")}
             >
               About Us
             </Link>
           </li>
           <li>
             <Link
-              to="/classes"
+              to="/programs"
               className="hover:text-orange-500 transition duration-300"
-              onClick={() => speakText("Classes")}
+              onClick={() => speakText("Programs Menu")}
             >
-              Classes
+              Programs
             </Link>
           </li>
           <li>
             <Link
-              to="/teachers"
+              to="/team"
               className="hover:text-orange-500 transition duration-300"
-              onClick={() => speakText("Teachers")}
+              onClick={() => speakText("Our Team Menu")}
             >
-              Teachers
+              Our Team
             </Link>
           </li>
           <li>
             <Link
               to="/events"
               className="hover:text-orange-500 transition duration-300"
-              onClick={() => speakText("Events")}
+              onClick={() => speakText("Events Menu")}
             >
               Events
             </Link>
           </li>
           <li>
             <Link
-              to="/blog"
+              to="/resources"
               className="hover:text-orange-500 transition duration-300"
-              onClick={() => speakText("Blog")}
+              onClick={() => speakText("Resources Menu")}
             >
-              Blog
+              Resources
             </Link>
           </li>
           <li>
             <Link
               to="/contacts"
               className="hover:text-orange-500 transition duration-300"
-              onClick={() => speakText("Contacts")}
+              onClick={() => speakText("Contact Us Menu")}
             >
-              Contacts
+              Contact Us
             </Link>
           </li>
         </ul>

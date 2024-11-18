@@ -52,12 +52,13 @@ const UpcomingEvent = () => {
   return (
     <section className="py-20 bg-gray-50 mx-4 md:mx-16">
       {/* Section Header */}
-      <div className="text-center mb-12" onClick={() => speakText('Upcoming Event, Learning record store (LRS), bite-sized learning, avatar eLearning, multimedia scenario, and serious games.')}>
+      <div className="text-center mb-12" onClick={() => speakText('Upcoming Event, Special sessions and workshops to empower blind students, assistive technology, and advocacy for accessibility in education.')}>
         <h2 className="text-4xl font-extrabold text-gray-800">
           Upcoming <span className="text-[rgb(243,115,53)]">Event</span>
         </h2>
         <p className="text-xl text-gray-700 mt-4">
-          Learning record store (LRS), bite-sized learning, avatar eLearning, multimedia scenario, and serious games.
+        Special sessions and workshops to empower blind students, assistive technology, and advocacy for accessibility in education.
+
         </p>
       </div>
 
@@ -150,4 +151,5 @@ const UpcomingEvent = () => {
 };
 
 export default UpcomingEvent;
+
 

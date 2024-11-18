@@ -32,10 +32,10 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          onClick={() => speakText("The Smarter Way To Learn Anything")} // Added onClick to speak text
+          onClick={() => speakText("Bright Vision – Empowering the Blind")} // Added onClick to speak text
         >
           The Smarter Way To Learn{" "}
-          <span className="text-[#f37335]">Anything</span>
+          <span className="text-[#f37335]">Empowering the Blind</span>
         </motion.h1>
 
         {/* Subheading */}
@@ -46,12 +46,11 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 0.2 }}
           onClick={() =>
             speakText(
-              "More than a pixel-perfect WordPress theme: bold design, innovative features, developed for education/academic websites."
+              "Providing inclusive education and opportunities to blind individuals. Together, we create a brighter tomorrow."
             )
           }
         >
-          More than a pixel-perfect WordPress theme: bold design, innovative
-          features, developed for education/academic websites.
+         Providing inclusive education and opportunities to blind individuals. Together, we create a brighter tomorrow.
         </motion.p>
 
         {/* Search Box */}
@@ -63,7 +62,7 @@ const HeroSection = () => {
         >
           <input
             type="text"
-            placeholder="Search classes"
+            placeholder="Search programs, events, or resources"
             className="bg-transparent outline-none w-full text-gray-700"
           />
           <FaSearch className="text-gray-500 ml-2" />
@@ -130,7 +129,7 @@ const HeroSection = () => {
           />
         </motion.div>
 
-        {/* Decorative Circles with cursor movement effect */}
+        {/* Decorative Circles with cursor movement effect
         <motion.div
           className="absolute w-6 sm:w-8 md:w-10 lg:w-12 h-6 sm:h-8 md:h-10 lg:h-12 rounded-full bg-[rgb(243,115,53)]"
           style={{
@@ -181,7 +180,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.7 }}
-        ></motion.div>
+        ></motion.div> */}
       </div>
     </div>
   );
